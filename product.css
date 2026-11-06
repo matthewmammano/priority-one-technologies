@@ -1,0 +1,239 @@
+/* layer shared by every product page; pair with style.css */
+
+.product-bar {
+  flex-wrap: wrap;
+  row-gap: 12px;
+}
+
+.head-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 2vw, 18px);
+  margin-left: auto;
+}
+
+.product-bar .product-id {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.product-bar .kind {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 5px 9px;
+  border-radius: 4px;
+  flex: none;
+}
+
+.product-bar .product-name {
+  font-family: "Archivo", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(16px, 2.6vw, 18px);
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.back-pill {
+  background: var(--card);
+  border-color: var(--line);
+  color: var(--ink);
+  gap: 9px;
+}
+
+.back-pill:hover {
+  background: #fff;
+  border-color: var(--accent);
+}
+
+.back-pill span {
+  white-space: nowrap;
+  font-weight: 500;
+  color: var(--sub);
+}
+
+.back-pill b {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.product-hero {
+  padding-block: clamp(42px, 7vw, 78px) clamp(50px, 7vw, 72px);
+}
+
+.product-hero h1 {
+  font-size: clamp(52px, 13.5vw, 126px);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.93;
+  margin: 12px 0 0;
+}
+
+.product-hero .tagline {
+  font-size: clamp(20px, 3.1vw, 31px);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ink);
+  max-width: 32ch;
+  margin: clamp(20px, 3vw, 30px) 0 0;
+  text-wrap: balance;
+}
+
+.product-hero .secondary {
+  color: var(--sub);
+  max-width: 64ch;
+  margin: 18px 0 0;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(16px, 3vw, 26px);
+  margin-top: clamp(32px, 4.5vw, 44px);
+}
+
+.cta-row .microcopy {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.carousel {
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
+.stage {
+  position: relative;
+  background: var(--panel);
+  border-radius: var(--radius-lg);
+  padding: clamp(7px, 1vw, 10px);
+  box-shadow: 0 26px 46px -36px rgba(31, 28, 23, 0.6);
+}
+
+.stage .track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  border-radius: 9px;
+}
+
+.stage .track::-webkit-scrollbar {
+  display: none;
+}
+
+.stage .frame {
+  scroll-snap-align: center;
+}
+
+.stage .frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--shot-ratio);
+  object-fit: cover;
+  border-radius: 9px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: clamp(36px, 5vw, 46px);
+  height: clamp(36px, 5vw, 46px);
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  background: rgba(34, 32, 27, 0.72);
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(3px);
+}
+
+.arrow:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.arrow.prev {
+  left: clamp(10px, 2vw, 20px);
+}
+
+.arrow.next {
+  right: clamp(10px, 2vw, 20px);
+}
+
+.carousel .caption {
+  display: grid;
+  margin: 18px 0 0;
+  max-width: 62ch;
+}
+
+.carousel .caption p {
+  grid-area: 1 / 1;
+  margin: 0;
+  font-size: 16px;
+  color: var(--sub);
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.carousel .caption p.on {
+  opacity: 1;
+}
+
+.carousel .caption b {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #d6cab5;
+  cursor: pointer;
+}
+
+.dot[aria-current="true"] {
+  background: var(--accent);
+}
+
+/* phones: no room for the category chip or the full-size action buttons in one bar */
+@media (max-width: 560px) {
+  .product-bar .kind {
+    display: none;
+  }
+
+  .head-actions {
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .head-actions .btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .back-pill .by {
+    display: none;
+  }
+}
