@@ -3,7 +3,7 @@
 Static site, no build step. Both pages ship from the same repo root:
 
 - `/index.html` - Priority One Technologies
-- `/inventory-iq/index.html` - Inventory IQ
+- `/iiq/index.html` - Inventory IQ
 
 ## 1. Form endpoint
 
