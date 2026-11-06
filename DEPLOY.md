@@ -63,3 +63,12 @@ Back in Settings -> Pages, confirm the custom domain reads
 
 Add the live domain to Formspree's allowed-domains list, or submissions from the
 real site get rejected.
+
+## TODO
+
+- [ ] Enforce HTTPS once GitHub issues the cert (check `curl -sI https://priorityonetechnologies.com/ | head -1` returns 200 first):
+  ```bash
+  gh api -X PUT repos/matthewmammano/priority-one-technologies/pages -F https_enforced=true
+  ```
+- [ ] Make `hello@priorityonetechnologies.com` receive mail (no MX records on the domain today, so it bounces).
+- [ ] Regenerate `og-image.png` and `iiq/og-image.png` - both still show the old design and wordmark.
