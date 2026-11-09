@@ -11,8 +11,8 @@
     --brand: #d9582e;
     --brand-ink: #a53f1b;
     --brand-press: #b8441f;
-    --slate: #1b2521;
-    --slate-soft: #b7c0b9;
+    --slate: #201f1d;
+    --slate-soft: #bcbab6;
     --good: #1f7a62;
     --bad: #a8321a;
 
@@ -235,6 +235,20 @@
     text-decoration: underline;
   }
 
+  .site-nav a.nav-product {
+    padding: 7px 12px;
+    border: var(--stroke) solid var(--rule-strong);
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .site-nav a.nav-product:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+  }
+
   /* inline nav only once the bar has room for brand, links and CTA on one line */
   @media (min-width: 62rem) {
     .site-nav {
@@ -344,19 +358,104 @@
   }
 
   .home-hero h1 {
-    max-width: 16ch;
+    max-width: 22ch;
   }
 
   .home-hero .lede {
-    max-width: 48ch;
+    max-width: 60ch;
   }
 
-  .home-hero .aside {
-    align-self: center;
+  .hero-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr));
+    gap: clamp(14px, 2.2vw, 30px);
+    margin: clamp(40px, 5vw, 64px) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .hero-strip li {
+    padding-top: 11px;
+    border-top: var(--stroke) solid var(--rule-strong);
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    font-weight: 500;
+  }
+
+  .hero-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(28px, 4vw, 56px);
+  }
+
+  .hero-copy {
+    flex: 3 1 28rem;
+    min-width: 0;
+  }
+
+  .hero-art {
+    flex: 1 1 17rem;
+    max-width: 25rem;
+    height: auto;
+    fill: none;
+  }
+
+  /* the hero art only earns its space beside the text; stacked on a phone it just costs scroll */
+  @media (max-width: 52rem) {
+    .hero-art {
+      display: none;
+    }
+  }
+
+  .art-paper {
+    stroke: var(--rule-strong);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+  }
+
+  .art-card {
+    fill: #fff;
+    stroke: var(--ink);
+    stroke-width: 1.6;
+  }
+
+  .art-bar,
+  .art-bar-foot,
+  .art-chip-on {
+    fill: var(--brand);
+  }
+
+  .art-flow,
+  .art-flow-head {
+    stroke: var(--brand);
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .art-head {
+    stroke: #fff;
+    stroke-width: 3.4;
+    stroke-linecap: round;
+  }
+
+  .art-rows {
+    stroke: var(--rule-strong);
+    stroke-width: 3.4;
+    stroke-linecap: round;
+  }
+
+  .art-chips rect {
+    fill: var(--rule);
   }
 
   .shot {
     margin: 0;
+  }
+
+  .lede + .shot {
+    margin-top: clamp(28px, 3.5vw, 44px);
   }
 
   .shot img {
@@ -385,8 +484,15 @@
     list-style: none;
   }
 
+  .points li {
+    display: grid;
+    grid-row: span 2;
+    grid-template-rows: subgrid;
+    row-gap: 8px;
+  }
+
   .points h3 {
-    margin: 0 0 8px;
+    margin: 0;
     padding-top: 14px;
     border-top: var(--stroke-strong) solid var(--ink);
   }
@@ -547,5 +653,61 @@
   *::after {
     transition-duration: 1ms !important;
     animation-duration: 1ms !important;
+  }
+}
+
+@layer components {
+  .shot.zoomable img {
+    cursor: zoom-in;
+  }
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    margin: 0;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    padding: var(--gutter);
+    background: color-mix(in srgb, var(--slate) 88%, transparent);
+  }
+
+  .lightbox[hidden] {
+    display: none;
+  }
+
+  .lightbox img {
+    display: block;
+    max-width: 100%;
+    max-height: 86vh;
+    width: auto;
+  }
+
+  .lightbox figcaption {
+    max-width: var(--measure);
+    color: var(--slate-soft);
+    font-size: 14.5px;
+    text-align: center;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: var(--gutter);
+    right: var(--gutter);
+    padding: 7px 13px;
+    border: var(--stroke) solid var(--slate-soft);
+    border-radius: var(--r-button);
+    background: none;
+    color: #fff;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .lightbox-close:hover {
+    background: color-mix(in srgb, #fff 14%, transparent);
   }
 }

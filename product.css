@@ -102,6 +102,30 @@
     flex-direction: row-reverse;
   }
 
+  /* a list feature has no screenshot: text keeps the wide column and the list stays on the right */
+  .feature.feature-list {
+    flex-direction: row;
+    align-items: start;
+  }
+
+  .feature.feature-list > .lead {
+    flex: 3 1 26rem;
+  }
+
+  .feature.feature-list > .aside {
+    flex: 2 1 19rem;
+  }
+
+  .feature-list .audience {
+    grid-template-columns: 1fr;
+    margin-top: 0;
+    max-width: none;
+  }
+
+  .feature-list .audience li:first-child {
+    border-top: var(--stroke) solid var(--rule);
+  }
+
   .feature h3 {
     font-size: clamp(20px, 2.2vw, 26px);
   }
@@ -110,11 +134,5 @@
     color: var(--ink-soft);
     margin: 14px 0 0;
     max-width: 44ch;
-  }
-
-  .zoom {
-    display: inline-block;
-    margin-top: 8px;
-    font-size: 14.5px;
   }
 }

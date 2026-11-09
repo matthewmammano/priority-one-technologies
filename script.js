@@ -86,3 +86,58 @@ if (contactForm) {
     }
   });
 }
+
+const zoomableShots = document.querySelectorAll(".shot.zoomable");
+
+if (zoomableShots.length) {
+  let lastFocused = null;
+
+  const lightbox = document.createElement("figure");
+  lightbox.className = "lightbox";
+  lightbox.hidden = true;
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.innerHTML =
+    '<button class="lightbox-close" type="button">Close</button><img alt=""><figcaption></figcaption>';
+  document.body.append(lightbox);
+
+  const full = lightbox.querySelector("img");
+  const caption = lightbox.querySelector("figcaption");
+  const closeButton = lightbox.querySelector(".lightbox-close");
+
+  function openLightbox(shot) {
+    const thumb = shot.querySelector("img");
+    const zoom = shot.querySelector(".zoom");
+    lastFocused = document.activeElement;
+    full.src = zoom ? zoom.getAttribute("href") : thumb.getAttribute("src");
+    full.alt = thumb.alt;
+    caption.textContent = shot.querySelector("figcaption").textContent;
+    lightbox.setAttribute("aria-label", thumb.alt);
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+    closeButton.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    full.removeAttribute("src");
+    document.body.style.overflow = "";
+    if (lastFocused) lastFocused.focus();
+  }
+
+  for (const shot of zoomableShots) {
+    shot.addEventListener("click", (e) => {
+      if (!e.target.closest("img, .zoom")) return;
+      e.preventDefault();
+      openLightbox(shot);
+    });
+  }
+
+  closeButton.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
+  });
+}
