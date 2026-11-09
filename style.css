@@ -398,7 +398,6 @@
     flex: 1 1 17rem;
     max-width: 25rem;
     height: auto;
-    fill: none;
   }
 
   /* the hero art only earns its space beside the text; stacked on a phone it just costs scroll */
@@ -406,48 +405,6 @@
     .hero-art {
       display: none;
     }
-  }
-
-  .art-paper {
-    stroke: var(--rule-strong);
-    stroke-width: 1.4;
-    stroke-linecap: round;
-  }
-
-  .art-card {
-    fill: #fff;
-    stroke: var(--ink);
-    stroke-width: 1.6;
-  }
-
-  .art-bar,
-  .art-bar-foot,
-  .art-chip-on {
-    fill: var(--brand);
-  }
-
-  .art-flow,
-  .art-flow-head {
-    stroke: var(--brand);
-    stroke-width: 2.2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .art-head {
-    stroke: #fff;
-    stroke-width: 3.4;
-    stroke-linecap: round;
-  }
-
-  .art-rows {
-    stroke: var(--rule-strong);
-    stroke-width: 3.4;
-    stroke-linecap: round;
-  }
-
-  .art-chips rect {
-    fill: var(--rule);
   }
 
   .shot {
