@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io https://cloudflareinsights.com; form-action 'self' https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Priority One Technologies | Custom Software for Operations</title>
 <meta name="description" content="Priority One Technologies builds custom web applications, internal tools, reporting, and tracking software for teams whose work does not fit an off-the-shelf product. Inventory IQ is one of those projects.">
@@ -31,6 +31,13 @@
   "url": "https://priorityonetechnologies.com/",
   "logo": "https://priorityonetechnologies.com/favicon.png",
   "email": "hello@priorityonetechnologies.com",
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "New Jersey"},
+    {"@type": "AdministrativeArea", "name": "New York"},
+    {"@type": "AdministrativeArea", "name": "Pennsylvania"},
+    {"@type": "AdministrativeArea", "name": "Connecticut"},
+    {"@type": "Country", "name": "United States"}
+  ],
   "description": "Priority One Technologies builds Inventory IQ, inventory tracking software for teams that manage physical supplies, and custom software and data tools for operational workflows.",
   "makesOffer": {
     "@type": "Offer",

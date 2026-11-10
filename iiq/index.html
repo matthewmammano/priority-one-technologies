@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io https://cloudflareinsights.com; form-action 'self' https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Inventory IQ | Inventory Tracking Software for EMS &amp; More</title>
-<meta name="description" content="Track inventory usage, stock levels, locations, and expiration dates with Inventory IQ. Built around EMS and fire-service workflows, with demos available for other organizations.">
+<title>EMS Supply Inventory Tracking Software | Inventory IQ</title>
+<meta name="description" content="Track EMS supplies by rig, station, and supply room. Scan to record usage, watch par levels, flag expiring stock, and plan restock from real usage history.">
 <link rel="canonical" href="https://priorityonetechnologies.com/iiq/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Priority One Technologies">
-<meta property="og:title" content="Inventory IQ | Inventory Tracking Software for EMS &amp; More">
-<meta property="og:description" content="Record supply usage, monitor stock by item and location, track expiration dates, and plan replenishment from usage history.">
+<meta property="og:title" content="EMS Supply Inventory Tracking Software | Inventory IQ">
+<meta property="og:description" content="Scan to record supply usage, see stock by rig and supply room, catch expiring items early, and plan restock from real usage history.">
 <meta property="og:url" content="https://priorityonetechnologies.com/iiq/">
 <meta property="og:image" content="https://priorityonetechnologies.com/iiq/og-image.png">
 <meta property="og:image:alt" content="Inventory IQ by Priority One Technologies">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Inventory IQ | Inventory Tracking Software for EMS &amp; More">
-<meta name="twitter:description" content="Record supply usage, monitor stock by item and location, track expiration dates, and plan replenishment from usage history.">
+<meta name="twitter:title" content="EMS Supply Inventory Tracking Software | Inventory IQ">
+<meta name="twitter:description" content="Scan to record supply usage, see stock by rig and supply room, catch expiring items early, and plan restock from real usage history.">
 <link rel="icon" type="image/png" href="../favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,6 +47,30 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Does it replace our paper restock sheets?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A crew member scans an item barcode and confirms the quantity that moved, so the count updates as supplies are used instead of at the end of a shift."}},
+    {"@type": "Question", "name": "Can we set par levels per item?", "acceptedAnswer": {"@type": "Answer", "text": "Each item carries a minimum and maximum quantity. Inventory IQ flags anything below its minimum and emails an alert so a restock happens before a rig goes out short."}},
+    {"@type": "Question", "name": "Does it track expiration dates?", "acceptedAnswer": {"@type": "Answer", "text": "Stock is tracked by item, storage location, and expiration date, so a near-dated box in one supply room does not hide behind fresher stock somewhere else."}},
+    {"@type": "Question", "name": "Will it tell us when to reorder?", "acceptedAnswer": {"@type": "Answer", "text": "Restock reporting uses recorded usage to estimate a reorder amount and a suggested reorder date per item, plus days until stockout."}},
+    {"@type": "Question", "name": "Does it handle controlled substances?", "acceptedAnswer": {"@type": "Answer", "text": "No. Inventory IQ tracks general medical and station supplies. It does not provide the custody logging or witness signatures a controlled-substance program requires."}},
+    {"@type": "Question", "name": "We are not an EMS agency. Does it still fit?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Items, storage locations, and par levels are yours to define, so a warehouse shelf or a school stockroom works the same way a rig does. Bring your own list to a demo and we can walk through the setup before you commit to anything."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Priority One Technologies", "item": "https://priorityonetechnologies.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Inventory IQ", "item": "https://priorityonetechnologies.com/iiq/"}
+  ]
+}
+</script>
 </head>
 <body>
 <a class="visually-hidden" href="#main">Skip to main content</a>
@@ -62,6 +86,7 @@
         <a href="#how-it-works">How it works</a>
         <a href="#features">Features</a>
         <a href="#who-its-for">Who it's for</a>
+        <a href="#faq">FAQ</a>
       </div>
       <a class="btn sm" href="#demo">Request a demo</a>
     </nav>
@@ -72,9 +97,9 @@
   <div class="wrap">
     <section class="product-hero split">
       <div class="lead">
-        <p class="eyebrow">Inventory management software</p>
-        <h1>Inventory visibility for the supplies your team depends on.</h1>
-        <p class="lede">Inventory IQ helps teams record supply usage, monitor stock by item and location, keep an eye on expiration dates, and plan replenishment from usage history. It was shaped around EMS and fire-service needs, but the approach can work for other organizations managing physical inventory.</p>
+        <p class="eyebrow">EMS supply inventory software</p>
+        <h1>Inventory tracking for the rigs, stations, and supply rooms your team runs on.</h1>
+        <p class="lede">Inventory IQ records supply usage as it happens, tracks stock by item and storage location, watches par levels and expiration dates, and plans restock from real usage history. It was shaped around EMS and fire-service stations, and the approach works anywhere a team runs physical inventory.</p>
         <div class="actions">
           <a class="btn" href="#demo">Request a demo</a>
         </div>
@@ -93,7 +118,7 @@
         <p class="eyebrow">The problem</p>
       </div>
       <div class="body">
-        <h2>Know what is on hand before it becomes urgent.</h2>
+        <h2>Know what is below par before the supply room is empty.</h2>
         <p class="lede">When inventory lives in spreadsheets, paper logs, or people's memory, it is difficult to see what has been used, what is expiring, and what needs to be reordered. Inventory IQ brings those details into one place so teams can make more informed decisions.</p>
       </div>
     </div>
@@ -110,15 +135,15 @@
         </li>
         <li>
           <h3>Update inventory</h3>
-          <p>Keep quantities organized by item and storage location.</p>
+          <p>Keep quantities organized by item, rig, and storage location.</p>
         </li>
         <li>
           <h3>Monitor important details</h3>
-          <p>Review stock levels and expiration information to spot items that need attention.</p>
+          <p>Review stock levels against par and expiration dates to spot items that need attention.</p>
         </li>
         <li>
           <h3>Plan ahead</h3>
-          <p>Use historical usage to help estimate future needs and plan replenishment.</p>
+          <p>Use recorded usage to estimate what to reorder and when to restock.</p>
         </li>
       </ol>
       <p class="note">Scanning looks up an item by its barcode and opens the quantity screen; a person still confirms what moved before it is recorded.</p>
@@ -185,8 +210,8 @@
     <div class="wrap split">
       <div class="lead">
         <p class="eyebrow">Who it's for</p>
-        <h2>Designed around EMS workflows. Useful wherever supplies matter.</h2>
-        <p class="lede">Inventory IQ is being piloted in an EMS/first aid squad setting. Its inventory-tracking approach may also suit fire departments, clinics, municipal teams, and other organizations that need to monitor physical supplies.</p>
+        <h2>Built around EMS workflows. Open to any team that stores supplies.</h2>
+        <p class="lede">Inventory IQ is being piloted in an EMS and first aid squad setting, across rigs, station supply rooms, and restock cabinets. Nothing about it is EMS-only. The same approach suits fire departments, clinics, municipal teams, warehouses, schools, and any organization that stores and restocks physical supplies.</p>
         <p class="lede">Bring your own item categories, storage locations, and the way your team actually works to a demo, and we can walk through how they would be set up.</p>
       </div>
       <div class="aside">
@@ -196,6 +221,7 @@
           <li>Clinics and medical offices</li>
           <li>Municipal and public-service teams</li>
           <li>Warehouses and distribution</li>
+          <li>Schools, shops, and any team with a stockroom</li>
         </ul>
       </div>
     </div>
@@ -207,6 +233,39 @@
       <p>The crew picked it up without a training session. That matters more than any feature to me. If it is harder than the clipboard, nobody uses it, and we have been down that road before.</p>
       <figcaption>- Chief, Point Boro First Aid Squad</figcaption>
     </figure>
+  </div>
+
+  <div class="wrap">
+    <section class="band" id="faq">
+      <p class="eyebrow">Common questions</p>
+      <h2>What people ask before a demo.</h2>
+      <div class="faq">
+        <div>
+          <h3>Does it replace our paper restock sheets?</h3>
+          <p>Yes. A crew member scans an item barcode and confirms the quantity that moved, so the count updates as supplies are used instead of at the end of a shift.</p>
+        </div>
+        <div>
+          <h3>Can we set par levels per item?</h3>
+          <p>Each item carries a minimum and maximum quantity. Inventory IQ flags anything below its minimum and emails an alert so a restock happens before a rig goes out short.</p>
+        </div>
+        <div>
+          <h3>Does it track expiration dates?</h3>
+          <p>Stock is tracked by item, storage location, and expiration date, so a near-dated box in one supply room does not hide behind fresher stock somewhere else.</p>
+        </div>
+        <div>
+          <h3>Will it tell us when to reorder?</h3>
+          <p>Restock reporting uses recorded usage to estimate a reorder amount and a suggested reorder date per item, plus days until stockout.</p>
+        </div>
+        <div>
+          <h3>Does it handle controlled substances?</h3>
+          <p>No. Inventory IQ tracks general medical and station supplies. It does not provide the custody logging or witness signatures a controlled-substance program requires.</p>
+        </div>
+        <div>
+          <h3>We are not an EMS agency. Does it still fit?</h3>
+          <p>Yes. Items, storage locations, and par levels are yours to define, so a warehouse shelf or a school stockroom works the same way a rig does. Bring your own list to a demo and we can walk through the setup before you commit to anything.</p>
+        </div>
+      </div>
+    </section>
   </div>
 
   <div class="band band-lift" id="demo">

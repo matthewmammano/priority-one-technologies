@@ -102,9 +102,8 @@
     flex-direction: row-reverse;
   }
 
-  /* a list feature has no screenshot: text keeps the wide column and the list stays on the right */
+  /* a list feature has no screenshot, so text keeps the wide column */
   .feature.feature-list {
-    flex-direction: row;
     align-items: start;
   }
 
@@ -134,5 +133,28 @@
     color: var(--ink-soft);
     margin: 14px 0 0;
     max-width: 44ch;
+  }
+
+  .faq {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
+    gap: clamp(24px, 3vw, 40px);
+    margin: clamp(32px, 4vw, 48px) 0 0;
+  }
+
+  .faq > div {
+    padding-top: 16px;
+    border-top: var(--stroke) solid var(--rule);
+  }
+
+  .faq h3 {
+    margin: 0 0 8px;
+    font-size: clamp(17px, 1.8vw, 19px);
+  }
+
+  .faq p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 16px;
   }
 }
